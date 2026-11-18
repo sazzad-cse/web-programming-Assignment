@@ -38,6 +38,8 @@
     <box>Enter your variable 2:</box><input type="number" id="V2">
     <button type="submit" onclick="doit()">Submit</button>
    </div>
+   <div class="op" id="result">
+    </div>
 </body>
 <style>
     body{
@@ -64,5 +66,35 @@
         padding: 12px;
         margin-top: 10px;
     }
+    .op{
+        display: none;
+        text-align:center;
+            margin-top:12px;
+            margin-bottom:12px;
+            margin-left:12px;
+            border:2px solid black;
+            border-radius:12px;
+            background-color:lightgreen;
+            color:black;
+            width: auto;
+            height: auto;
+    }
 </style>
+<script>
+    function doit(){
+        var v1=document.getElementById("V1").value;
+        var v2=document.getElementById("V2").value;
+        if(v1=="" || v2==""){
+            alert("Please Fill All The Fields");
+        }
+        if (v1==18 && v2==13 || v1==13 && v2==18) {
+            document.getElementById("result").innerHTML = "congratulations! You have entered the correct values.";
+            document.getElementById("result").style.display = "block";
+        } else {
+            document.getElementById("result").innerHTML = "The values you entered are incorrect. Please try again.";
+            document.getElementById("result").style.display = "block";
+        }
+            
+}
+    </script>
 </html>
